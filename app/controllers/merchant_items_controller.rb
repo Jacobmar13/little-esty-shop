@@ -35,7 +35,7 @@ class MerchantItemsController < ApplicationController
 
   def update_status
     @merchant = Merchant.find(params[:merchant_id])
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
     @item.update!(item_params)
     redirect_to merchant_items_path(@merchant)
   end
