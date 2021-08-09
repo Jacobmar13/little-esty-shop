@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       patch 'status', to: 'merchant_items#update_status'
     end
     resources :invoices, controller: 'merchant_invoices'
+    resources :discounts, controller: 'merchant_discounts'
   end
 
   resources :invoice_items, only: :update
