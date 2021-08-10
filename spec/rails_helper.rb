@@ -35,6 +35,7 @@ end
 
 RSpec.configure do |config|
   config.before(:each) do
+    Discount.destroy_all
     Transaction.destroy_all
     Customer.destroy_all
     Invoice.destroy_all
@@ -300,12 +301,23 @@ RSpec.configure do |config|
     @transaction13 = @invoice13.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
     @transaction14 = @invoice14.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: false)
 
-    #Added to test merchant top_five_items method
+    # Added to test merchant top_five_items method
     @transaction15 = @invoice16.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
     @transaction16 = @invoice17.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
     @transaction17 = @invoice18.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
     @transaction18 = @invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
     @transaction19 = @invoice20.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: false)
+
+    # Discounts
+    @discount1 = @merchant1.discounts.create!(quantity: 25, discount: 5)
+    @discount2 = @merchant1.discounts.create!(quantity: 50, discount: 10)
+    @discount3 = @merchant1.discounts.create!(quantity: 100, discount: 15)
+    @discount4 = @merchant1.discounts.create!(quantity: 200, discount: 20)
+
+    @discount5 = @merchant2.discounts.create!(quantity: 35, discount: 5)
+    @discount6 = @merchant2.discounts.create!(quantity: 70, discount: 10)
+    @discount7 = @merchant2.discounts.create!(quantity: 140, discount: 15)
+    @discount8 = @merchant2.discounts.create!(quantity: 280, discount: 20)
   end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
