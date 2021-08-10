@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Merchant, type: :model do
   describe 'relationships' do
     it { should have_many(:items) }
+    it { should have_many(:discounts) }
     it { should have_many(:invoice_items).through(:items) }
     it { should have_many(:invoices).through(:invoice_items) }
     it { should have_many(:transactions).through(:invoices) }
@@ -11,7 +12,7 @@ RSpec.describe Merchant, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
   end
-  
+
   describe 'instance methods' do
     describe '#top_customers' do
       it 'returns the top 5 customers by succussesful transactions' do
@@ -89,9 +90,9 @@ RSpec.describe Merchant, type: :model do
       end
     end
   end
-  
+
   describe 'class methods' do
-   describe '.enabled_merchants' do
+    describe '.enabled_merchants' do
       it 'can get all the merchants that are enabled' do
         expect(Merchant.enabled_merchants).to eq([@merchant5, @merchant6])
       end
