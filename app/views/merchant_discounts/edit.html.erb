@@ -1,0 +1,9 @@
+<%= form_with model: [@merchant, @discount], local: true do |f| %>
+  <%= f.label :quantity, 'Items to qualify:' %>
+  <%= f.number_field :quantity %><br>
+
+  <%= f.label :discount, 'Percent discount given:' %>
+  <%= f.number_field :discount %><br>
+
+  <%= f.submit 'Update Discount' %>
+<% end %>
