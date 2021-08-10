@@ -9,12 +9,10 @@
   <%= button_to 'Delete Discount', merchant_discount_path(@merchant.id, discount.id), method: :delete %><br>
 <% end %>
 
-<% if false %>
-  <h3>Upcoming Holidays</h3>
-    <p>
-      <% api_next_holidays.each do |holiday| %>
-        <b><%= holiday.name %></b><br>
-        <%= holiday.date %><br>
-      <% end %>
-    </p>
-<% end %>
+<h3>Upcoming Holidays</h3>
+  <p>
+    <% api_next_holidays.each do |holiday| %>
+      <b><%= holiday.name %></b><br>
+      <%= holiday.date %><br>
+    <% end %>
+  </p>
