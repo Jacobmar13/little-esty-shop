@@ -34,6 +34,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
   config.before(:each) do
     Discount.destroy_all
     Transaction.destroy_all
