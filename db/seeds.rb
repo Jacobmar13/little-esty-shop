@@ -8,7 +8,7 @@
 
 Discount.destroy_all
 
-@discount1 = Discount.create!(quantity: 25, discount: 5, merchant_id: 1)
+@discount1 = Discount.create!(quantity: 10, discount: 5, merchant_id: 1)
 @discount2 = Discount.create!(quantity: 50, discount: 10, merchant_id: 1)
 @discount3 = Discount.create!(quantity: 100, discount: 15, merchant_id: 1)
 @discount4 = Discount.create!(quantity: 200, discount: 20, merchant_id: 1)
