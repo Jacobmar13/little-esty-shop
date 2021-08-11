@@ -27,6 +27,9 @@
         <%= f.select :status, ['pending', 'packaged', 'shipped'], selected: invoice_item.status %>
         <%= f.submit "Update Item Status" %>
       <% end %>
+      <% if invoice_item.discount_revenue != nil %>
+        <%= button_to 'Applied Discount', merchant_discount_path(invoice_item.discount_revenue.merchant_id, invoice_item.discount_revenue.id), method: :get %>
+      <% end %>
       <br>
     </div>
   <% end %>
