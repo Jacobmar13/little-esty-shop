@@ -8,7 +8,15 @@ class InvoiceItem < ApplicationRecord
     where('invoice_id = ?', invoice_id).where('item_id = ?', item_id).first
   end
 
-  def self.total_revenue
-    sum("quantity * unit_price")
+  def total_revenue
+    quantity * unit_price
+  end
+
+  def discount_revenue
+    Discount
+      .where('discounts.quantity <= ? AND discounts.merchant_id = ?', quantity, item.merchant.id)
+      .order(discount: :DESC)
+      .limit(1)
+      .first
   end
 end
