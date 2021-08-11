@@ -8,12 +8,32 @@
 
 Discount.destroy_all
 
-@discount1 = Discount.create!(quantity: 10, discount: 5, merchant_id: 1)
-@discount2 = Discount.create!(quantity: 50, discount: 10, merchant_id: 1)
-@discount3 = Discount.create!(quantity: 100, discount: 15, merchant_id: 1)
-@discount4 = Discount.create!(quantity: 200, discount: 20, merchant_id: 1)
+@discount1 = Discount.create!(quantity: 5, discount: 10, merchant_id: 1)
+@discount2 = Discount.create!(quantity: 10, discount: 20, merchant_id: 1)
 
-@discount5 = Discount.create!(quantity: 35, discount: 5, merchant_id: 2)
-@discount6 = Discount.create!(quantity: 70, discount: 10, merchant_id: 2)
-@discount7 = Discount.create!(quantity: 140, discount: 15, merchant_id: 2)
-@discount8 = Discount.create!(quantity: 280, discount: 20, merchant_id: 2)
+@discount3 = Discount.create!(quantity: 5, discount: 10, merchant_id: 2)
+@discount4 = Discount.create!(quantity: 10, discount: 15, merchant_id: 2)
+
+@discount5 = Discount.create!(quantity: 5, discount: 5, merchant_id: 3)
+@discount6 = Discount.create!(quantity: 10, discount: 20, merchant_id: 3)
+
+@discount7 = Discount.create!(quantity: 5, discount: 8, merchant_id: 4)
+@discount8 = Discount.create!(quantity: 10, discount: 13, merchant_id: 4)
+
+@discount9 = Discount.create!(quantity: 5, discount: 14, merchant_id: 5)
+@discount10 = Discount.create!(quantity: 10, discount: 30, merchant_id: 5)
+
+@discount11 = Discount.create!(quantity: 5, discount: 5, merchant_id: 6)
+@discount12 = Discount.create!(quantity: 10, discount: 10, merchant_id: 6)
+
+@discount13 = Discount.create!(quantity: 5, discount: 5, merchant_id: 7)
+@discount14 = Discount.create!(quantity: 10, discount: 10, merchant_id: 7)
+
+@discount15 = Discount.create!(quantity: 5, discount: 5, merchant_id: 8)
+@discount16 = Discount.create!(quantity: 10, discount: 10, merchant_id: 8)
+
+@discount17 = Discount.create!(quantity: 5, discount: 5, merchant_id: 9)
+@discount18 = Discount.create!(quantity: 10, discount: 10, merchant_id: 9)
+
+@discount19 = Discount.create!(quantity: 5, discount: 5, merchant_id: 10)
+@discount20 = Discount.create!(quantity: 10, discount: 10, merchant_id: 10)
